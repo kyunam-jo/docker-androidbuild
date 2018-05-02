@@ -9,6 +9,10 @@ RUN apt update && apt -y upgrade
 # sudo command -y install
 RUN apt -y install sudo
 
+# Set Timezone
+ENV TZ=Asia/Seoul
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Prepare build tool
 RUN apt -y install openjdk-8-jdk
 RUN apt -y install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip python ccache imagemagick vim net-tools gosu bc libssl-dev locales kmod tzdata bash-completion
@@ -27,9 +31,6 @@ RUN chmod +rx /usr/bin/repo
 # Clean up APT when done.
 RUN apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Set TimeZone
-
 # Copy create build user
-
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh", "/bin/bash"]

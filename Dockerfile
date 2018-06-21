@@ -15,7 +15,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Prepare build tool
 RUN apt -y install openjdk-8-jdk
-RUN apt -y install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip python ccache imagemagick vim net-tools gosu bc libssl-dev locales kmod tzdata bash-completion
+RUN apt -y install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip python ccache imagemagick vim net-tools gosu bc libssl-dev locales kmod tzdata bash-completion rsync
 
 #locale settings
 RUN locale-gen --purge en_US.UTF-8

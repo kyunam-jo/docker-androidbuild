@@ -6,7 +6,7 @@ docker run -d \
   --hostname=jenkinsbuild \
   --dns=[DNS1] \
   --dns=[DNS2] \
-  -e LOCAL_USER_ID=`id -u $USER` \
+  -e LOCAL_USER_ID=$(id -u $USER) \
   -e LOCAL_USER_NAME=jenkinsci \
   -p 2201:22 \
   -v $HOME/user/jenkinsci:/home/jenkinsci/source \

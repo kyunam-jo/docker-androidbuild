@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ssh-keygen -t rsa -N ""
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y sshpass

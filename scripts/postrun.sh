@@ -4,15 +4,9 @@
 #sudo cp resolv.conf /etc/resolv.conf
 #rm -rf resolv.conf
 
-mkdir -p ~/.ssh
-
-ssh-keyscan 10.178.97.151 >> ~/.ssh/known_hosts
-
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y sshpass
-
-sshpass -p 'namjin0904!' scp 10.178.97.151:~/.ssh/* ~/.ssh/
 
 git config --global user.name $USER
 git config --global user.email $USER@lge.com

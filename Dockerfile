@@ -29,6 +29,7 @@ RUN apt-get -y install cpio
 
 # install python external package
 RUN apt-get -y install python-pip
+RUN pip install --upgrade pip
 RUN pip install html2text
 
 #locale settings

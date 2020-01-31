@@ -37,8 +37,8 @@ RUN locale-gen --purge en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 #RUN echo -e 'LANG="en_US.UTF-8"' > /etc/default/locale
 
-RUN apt-get -y install openssh-server ssh
-RUN sed  -i -e "s/^#?UsePAM yes/UsePAM no/g"  -e 's/^.*Port 22$/Port 22/g' /etc/ssh/sshd_config
+#RUN apt-get -y install openssh-server ssh
+#RUN sed  -i -e "s/^#?UsePAM yes/UsePAM no/g"  -e 's/^.*Port 22$/Port 22/g' /etc/ssh/sshd_config
 
 # Adding REPO
 ADD https://storage.googleapis.com/git-repo-downloads/repo /usr/bin/repo
